@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1><%= @list.name %></h1>
+<ul>
+  <% @list.movies.each do |movie| %>
+    <li><strong>Name:</strong><%= movie.title %></li>
+    <li><strong>overview:</strong><%= movie.overview %></li>
+    <li><strong>rating:</strong><%= movie.rating %></li>
+    <%= link_to 'Delete this movie', list_path(@list.bookmarks), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <% end %>
+</ul>
+</div>
+
+<div>
+  <%= link_to "Back to lists", lists_path %> |  <%= link_to "Add to movie", new_list_bookmark_path(@list) %>
+</div>
