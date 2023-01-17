@@ -1,15 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
 <h1><%= @list.name %></h1>
-<ul>
-  <% @list.movies.each do |movie| %>
-    <li><strong>Name:</strong><%= movie.title %></li>
-    <li><strong>overview:</strong><%= movie.overview %></li>
-    <li><strong>rating:</strong><%= movie.rating %></li>
-    <%= link_to 'Delete this movie', list_path(@list.bookmarks), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+<div class="d-flex row">
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card m-2" style="width: 18rem;">
+    <%= image_tag bookmark.movie.poster_url, width: "100%" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= bookmark.movie.title %></h5>
+        <h4><%= bookmark.movie.rating %></h4>
+        <p class="card-text"><%= bookmark.movie.overview %></p>
+        <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>
+      </div>
+    </div>
   <% end %>
-</ul>
 </div>
+
 
 <div>
   <%= link_to "Back to lists", lists_path %> |  <%= link_to "Add to movie", new_list_bookmark_path(@list) %>

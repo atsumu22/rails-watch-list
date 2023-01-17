@@ -6,6 +6,7 @@
   <ol>
     <% @lists.each do |list| %>
       <li><%= link_to list.name, list_path(list) %></li>
+      <%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     <% end %>
   </ol>
 </div>
