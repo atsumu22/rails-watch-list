@@ -9,6 +9,9 @@
   color: white;
   text-shadow: 1px 1px 3px rgb(255, 255, 255);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  &.card-overview {
+    height: 50%;
+  }
   &.card-adding {
       text-decoration: none;
       color: black;
