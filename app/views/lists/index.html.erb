@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>My Favorite Movies</h1>
+<div class="mainvisual index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('http://cdn-ak.f.st-hatena.com/images/fotolife/o/omoshironowa/20150619/20150619020430.jpg')">
+  <h1>My Favorite Movies</h1>
+</div>
 <div class="container">
   <div class="cards">
     <% @lists.each do |list| %>
@@ -15,8 +17,6 @@
         </div>
       </div>
     <% end %>
+    <%= link_to "＋New list", new_list_path, class: "card-adding"%>
   </div>
-
-  <%= link_to "New list", new_list_path, class: "btn btn-primary"%>
-
 </div>

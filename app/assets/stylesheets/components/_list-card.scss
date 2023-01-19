@@ -1,5 +1,31 @@
 .card {
+  position: relative;
   padding: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 450px;
+  width: 300px;
+  border-radius: 20px;
+  color: white;
+  text-shadow: 1px 1px 3px rgb(255, 255, 255);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  &.card-adding {
+      text-decoration: none;
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 6px dashed black;
+  }
+}
+
+.position-absolute {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
 }
 
 .cards {
@@ -38,6 +64,19 @@
         text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
       }
     }
+  }
+  & .card-adding {
+    height: 180px;
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 6px dashed black;
+    border-radius: 5px;
   }
 }
 
