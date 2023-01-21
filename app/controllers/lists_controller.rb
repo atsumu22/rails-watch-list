@@ -6,6 +6,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def new
@@ -21,9 +22,20 @@ class ListsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @list.update(list_params)
+      redirect_to list_path(@list)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @list.destroy
-    redirect_to list_path(@list), status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   private

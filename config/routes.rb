@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "lists#index"
   resources :lists do
-    resources :bookmarks, shallow: true
+    resources :bookmarks, only: %i[new create]
+    resources :reviews,  only: %i[new create]
   end
+  resources :bookmarks, only: %i[destroy]
+  resources :reviews, only: %i[edit update destroy]
 end

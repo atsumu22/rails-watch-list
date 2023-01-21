@@ -55,18 +55,18 @@
         text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
       }
     }
-    & .btn-delete {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      & > a {
-        text-decoration: none;
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-      }
-    }
+    // & .btn-delete {
+    //   position: absolute;
+    //   top: 10px;
+    //   right: 10px;
+    //   & > a {
+    //     text-decoration: none;
+    //     color: white;
+    //     font-size: 24px;
+    //     font-weight: bold;
+    //     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    //   }
+    // }
   }
   & .card-adding {
     height: 180px;
@@ -115,5 +115,25 @@
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+.card-review {
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 16px;
+  margin-top: 10px;
+  & i {
+    font-size: 28px;
+    text-shadow: 0 0 3px rgba(0,0,0,0.4);
+    &.bg-bright {
+      color: goldenrod;
+    }
+    &.bg-gray {
+      color: gray;
+      opacity: 0.7;
+    }
   }
 }
