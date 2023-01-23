@@ -1,24 +1,32 @@
-<div class="card-review d-flex justify-content-between">
+<ul class="liststyle-none  padding-left-none">
   <% unless @list.reviews.empty? %>
     <% @list.reviews.each do |review| %>
-      <div class="flex-left">
-        <ul class="list-inline">
-          <% review.rating.times do %>
-            <li><i class="fa-solid fa-star bg-bright"></i></li>
-          <% end %>
-          <% (5 - review.rating).times do %>
-            <li><i class="fa-solid fa-star bg-gray"></i></li>
-          <% end %>
-        </ul>
-        <h4><%= review.content %></h4>
-      </div>
-      <div class="flex-right">
-        <%= link_to review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-          <i class="fa-solid fa-trash-can"></i>
-        <% end %>
-      </div>
+      <li>
+        <div class="card-review d-flex">
+          <div>
+            <ul class="list-inline">
+              <% review.rating.times do %>
+                <li><i class="fa-solid fa-star bg-bright"></i></li>
+              <% end %>
+              <% (5 - review.rating).times do %>
+                <li><i class="fa-solid fa-star bg-gray"></i></li>
+              <% end %>
+            </ul>
+            <h4><%= review.content %></h4>
+          </div>
+          <div class="ms-auto">
+            <%= link_to review_path(review), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+              <i class="fa-solid fa-trash-can"></i>
+            <% end %>
+          </div>
+        </div>
+      </li>
     <% end %>
   <% else %>
-    <h4>No reviews yet</h4>
+  <li>
+    <div class="card-review">
+      <h4>No reviews yet</h4>
+    </div>
+  </li>
   <% end %>
-</div>
+</ul>

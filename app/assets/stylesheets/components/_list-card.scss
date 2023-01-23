@@ -25,6 +25,10 @@
   }
 }
 
+.padding-left-none {
+  padding-left: 0;
+}
+
 .position-absolute {
   position: absolute;
   bottom: 15px;
@@ -136,4 +140,8 @@
       opacity: 0.7;
     }
   }
+}
+
+.liststyle-none {
+  list-style: none;
 }
